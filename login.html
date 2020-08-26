@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            backdrop-filter: blur(20px) grayscale(40%);
+        }
+        
+        .signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body class="text-center my-text-center" background="img/fondo.jpg">
+    <div class="container p-5">
+        <div class="alert alert-danger my-alert-danger" role="alert" style="position: relative; width:450px; top: 0;">
+            <form name="formularioLogin" class="form-signin" id="formulario" action="index.html" onsubmit="return validarForm()">
+                <img class="mb-4 img-resize" src="img/login.png">
+                <h1 class="h3 mb-3 my-font-weight-normal">Ingrese sus datos</h1>
+                <div id="demo"></div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><img src="img/usuario.jpg" class="iconos"></span>
+                    </div>
+                    <label for="inputUsuario" class="sr-only">Usuario</label>
+                    <input type="text" name="usuario" id="inputUsuario" class="form-control my-form-control" placeholder="-Nombre de usuario-">
+                </div>
+                <br>
+                <div id="demo1"></div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><img src="img/correo.JPG" class="iconos"></span>
+                    </div>
+                    <label for="inputEmail" class="sr-only">Correo electrónico</label>
+                    <input type="email" name="gmail" id="inputEmail" class="form-control my-form-control" placeholder="-Correo electrónico-">
+                </div>
+                <br>
+                <div id="demo2"></div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><img src="img/contraseña.JPG" class="iconos"></span>
+                    </div>
+                    <label for="inputPassword" class="sr-only" id="pass">Contraseña </label>
+                    <input type="password" id="inputPassword" class="form-control my-form-control" placeholder="-Contraseña-">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><img src="img/mostrar.jpg" id="bot"></span>
+                    </div>
+                </div>
+
+                <div class="checkbox mb-3">
+                    <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="btn-block my-btn-block" type="submit" value="Ingresar">Ingresar</button>
+                <br>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="js/init.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
