@@ -13,14 +13,14 @@ boton.addEventListener("click", mostrarContraseña);
 function mostrarContraseña() {
     if (input.type == "password") {
         input.type = "text";
-        boton.src = "img/ocultar.jpg";
+        boton.src = "img/eye-solid.svg";
     } else {
         input.type = "password";
-        boton.src = "img/mostrar.jpg";
+        boton.src = "img/eye-slash-solid.svg";
     }
 };
 
-
+var usuario2 = document.getElementById("inputUsuario");
 var usuario = document.getElementById("inputUsuario");
 var correo = document.getElementById("inputEmail");
 var contra = document.getElementById("inputPassword");
@@ -44,13 +44,15 @@ function validarForm() {
     if (mensajeError["Usuario"]) {
         errorUsuario.innerHTML = "Ingresa un nombre de usuario";
         usuario.style.borderColor = "red";
+        usuario.style.backgroundColor = "rgb(255, 190, 190)";
     } else {
         usuario.style.borderColor = "green";
     }
 
     if (mensajeError["Correo"]) {
-        errorCorreo.innerHTML = "Ingresa el correo";
+        errorCorreo.innerHTML = "Ingresa la dirección del correo";
         correo.style.borderColor = "red";
+        correo.style.backgroundColor = "rgb(255, 190, 190)";
     } else {
         correo.style.borderColor = "green";
     }
@@ -58,10 +60,12 @@ function validarForm() {
     if (mensajeError["Contraseña"]) {
         errorContraseña.innerHTML = "Ingresa la contraseña";
         contra.style.borderColor = "red";
+        contra.style.backgroundColor = "rgb(255, 190, 190)";
     } else {
         if (mensajeError["CantCaract"]) {
             errorContraseña.innerHTML = "La contraseña debe tener mas de 6 caracteres";
             contra.style.borderColor = "red";
+            contra.style.backgroundColor = "rgb(255, 190, 190)";
         } else {
             contra.style.borderColor = "green";
         }
@@ -72,14 +76,16 @@ function validarForm() {
 
 };
 
-/*function usuario() {
+miStorage = window.sessionStorage;
+
+function mostrarUsuario() {
 
     var usuario2 = document.getElementById("inputUsuario").value;
-
-    var miStorange = window.sessionStorage;
-    miStorange.setItem("keyUsuario", usuario2);
+    miStorage.setItem("keyUsuario", usuario2);
 
 
-    document.getElementById("user").innerHTML = miStorange.getItem("keyUsuario")
-        //alert(miStorange.getItem("keyUsuario"))
-};*/
+
+    //document.getElementById("user1").innerHTML = miStorage.getItem("keyUsuario")
+    //document.getElementById("user").innerHTML = miStorange.getItem("keyUsuario")
+    //alert(miStorage.getItem("keyUsuario"));
+};

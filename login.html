@@ -10,6 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -46,43 +47,39 @@
                 <img class="mb-4 img-resize" src="img/login.png">
                 <h1 class="h3 mb-3 my-font-weight-normal">Ingrese sus datos</h1>
                 <div id="demo"></div>
-                <div class="input-group">
+                <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><img src="img/usuario.jpg" class="iconos"></span>
+                        <span class="input-group-text"><i class="fa fa-user my-fa-fa-user"></i></span>
                     </div>
                     <label for="inputUsuario" class="sr-only">Usuario</label>
-                    <input type="text" name="usuario" id="inputUsuario" class="form-control my-form-control" placeholder="-Nombre de usuario-">
+                    <input type="text" name="Usuario" id="inputUsuario" class="form-control my-form-control" placeholder="-Nombre de usuario-">
+
                 </div>
-                <br>
+
                 <div id="demo1"></div>
-                <div class="input-group">
+                <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><img src="img/correo.JPG" class="iconos"></span>
+                        <span class="input-group-text"><i class="fa fa-at my-fa-fa-user"></i></span>
                     </div>
                     <label for="inputEmail" class="sr-only">Correo electrónico</label>
                     <input type="email" name="gmail" id="inputEmail" class="form-control my-form-control" placeholder="-Correo electrónico-">
                 </div>
-                <br>
+
                 <div id="demo2"></div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><img src="img/contraseña.JPG" class="iconos"></span>
+                        <span class="input-group-text"><i class="fa fa-lock my-fa-fa-user"></i></span>
                     </div>
                     <label for="inputPassword" class="sr-only" id="pass">Contraseña </label>
                     <input type="password" id="inputPassword" class="form-control my-form-control" placeholder="-Contraseña-">
-                    <div class="input-group-append">
-                        <span class="input-group-text"><img src="img/mostrar.jpg" id="bot"></span>
-                    </div>
+                    <span class="input-group-text"><img src="img/eye-slash-solid.svg" class="fa fa-eye" id="bot"></i> </span>
                 </div>
 
                 <div class="checkbox mb-3">
                     <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                  </label>
+                <input type="checkbox" value="remember-me"> Remember me </label>
                 </div>
-                <button class="btn-block my-btn-block" type="submit" value="Ingresar">Ingresar</button>
-                <br>
-
+                <button class="btn btn-primary" type="submit" value="Ingresar" onclick="mostrarUsuario()">  Ingresar  <i class="fa fa-check"></i></button>
             </form>
         </div>
     </div>
