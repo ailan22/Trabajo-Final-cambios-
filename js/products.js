@@ -62,8 +62,8 @@ function showProductsList() {
     for (let i = 0; i < currentProductsArray.length; i++) {
         let producto = currentProductsArray[i];
 
-        if (((minPrice == undefined) || (minPrice != undefined && parseInt(product.productCount) >= minPrice)) &&
-            ((maxPrice == undefined) || (maxPrice != undefined && parseInt(product.productCount) <= maxPrice))) {
+        if (((minPrice == undefined) || (minPrice != undefined && parseInt(producto.cost) >= minPrice)) &&
+            ((maxPrice == undefined) || (maxPrice != undefined && parseInt(producto.cost) <= maxPrice))) {
 
             htmlContentToAppend += `
         <div class="list-group-item">

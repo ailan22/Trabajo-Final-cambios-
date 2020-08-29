@@ -43,15 +43,23 @@
                         <label class="btn btn-light" id="sortDesc">
                             <input type="radio" name="options" autocomplete="off">Z-A
                         </label>
-                        <label class="btn btn-light" id="sortByPriceMax">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-right">
+                            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                                <label class="btn btn-light" id="sortByPriceMax">
                             <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Precio
                         </label>
-                        <label class="btn btn-light" id="sortByPriceMin">
-                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Precio
+                                <label class="btn btn-light" id="sortByPriceMin">
+                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up-alt mr-1"></i>Precio
                         </label>
-                        <label class="btn btn-light" id="sortByCount">
+                                <label class="btn btn-light" id="sortByCount">
                             <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant. Vendidos
                         </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,7 +68,7 @@
                 <div class="col-md-6 col-sm-12 mb-1 container">
                     <div class="row container p-0 m-0">
                         <div class="col">
-                            <p class="font-weight-normal text-right my-2"></p>
+                            <p class="font-weight-normal text-right my-2">Precio:</p>
                         </div>
                         <div class="col">
                             <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
@@ -77,21 +85,24 @@
                     </div>
                 </div>
             </div>
-            <div class="container p-5">
+            <div class="row">
+                <div class="container p-5">
+                </div>
             </div>
         </div>
-        <div id="spinner-wrapper">
-            <div class="lds-ring">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+    </main>
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/init.js"></script>
-        <script src="js/products.js"></script>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
 </body>
 
 </html>
