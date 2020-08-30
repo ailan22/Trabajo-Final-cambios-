@@ -1,21 +1,21 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e) {
-
-});
-
+document.addEventListener("DOMContentLoaded", function(e) {});
 var boton = document.getElementById("bot");
 var input = document.getElementById("inputPassword");
+var input2 = document.getElementById("inputPassword2");
 
 boton.addEventListener("click", mostrarContraseña);
 
 function mostrarContraseña() {
-    if (input.type == "password") {
+    if (input.type == "password" && input2.type == "password") {
         input.type = "text";
+        input2.type = "text";
         boton.src = "img/eye-solid.svg";
     } else {
         input.type = "password";
+        input2.type = "password";
         boton.src = "img/eye-slash-solid.svg";
     }
 };
@@ -40,8 +40,8 @@ function validarForm() {
     mensajeError["Usuario"] = usuario.value === null || usuario.value === "";
     mensajeError["Correo"] = correo.value === null || correo.value === "";
     mensajeError["Contraseña"] = contra.value === null || contra.value === "";
-    mensajeError["CantCaract"] = contra.value.length <= 6;
-    mensajeError["ContraseñasIguales"] = contra.value !== contra2.value;
+    mensajeError["CantCaract"] = contra.value.length <= 6 || contra2.value.length <= 6;
+    mensajeError["ContraseñasIguales"] = contra.value !== contra2.value || contra2.value === null || contra2.value === "";
 
     if (mensajeError["Usuario"]) {
         errorUsuario.innerHTML = "Ingresa un nombre de usuario";
@@ -64,14 +64,18 @@ function validarForm() {
         if (mensajeError["CantCaract"]) {
             errorContraseña.innerHTML = "La contraseña debe tener mas de 6 caracteres";
             contra.style.borderColor = "red";
+            contra2.style.borderColor = "red";
         } else {
             contra.style.borderColor = "green";
         }
     }
     if (mensajeError["ContraseñasIguales"]) {
         errorContraseña.innerHTML = "Las contraseñas no coinciden";
+        contra.style.borderColor = "red";
+        contra2.style.borderColor = "red";
+    } else {
+        contra2.style.borderColor = "green";
     }
-
 
     return !mensajeError["Usuario"] && !mensajeError["Correo"] && !mensajeError["Contraseña"] && !mensajeError["CantCaract"] && !mensajeError["ContraseñasIguales"];
 
@@ -84,11 +88,3 @@ function mostrarUsuario() {
     var usuario2 = document.getElementById("inputUsuario").value;
     miStorage.setItem("keyUsuario", usuario2);
 };
-
-if (p1 != p2) {
-    alert("Las passwords deben de coincidir");
-    return false;
-} else {
-    alert("Todo esta correcto");
-    return true;
-}

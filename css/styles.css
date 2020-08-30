@@ -152,7 +152,7 @@ a.custom-card:hover {
     border-color: rgba(41, 40, 40, 0.1);
     background-color: rgba(85, 85, 87, 0.432);
     width: 200px;
-    height: 580px;
+    height: 590px;
     box-shadow: 0.5em 0.2em 0.5em 0.5em rgba(41, 40, 40, 0.1);
     border-radius: 20px;
 }
@@ -199,4 +199,10 @@ a.custom-card:hover {
 
 .my-size {
     width: 1000px;
+}
+
+.imagen-user {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
 }

@@ -31,6 +31,7 @@ function sortProducts(criteria, array) {
 
             if (aCount > bCount) { return -1; }
             if (aCount < bCount) { return 1; }
+
             return 0;
         });
     } else if (criteria === ORDER_BY_PRICE_MAX) {
@@ -83,9 +84,41 @@ function showProductsList() {
         </div>
         `
         }
-
-        document.getElementsByClassName("container p-5")[0].innerHTML = htmlContentToAppend;
     }
+    document.getElementsByClassName("container p-5")[0].innerHTML = htmlContentToAppend;
+}
+
+function showProductsListFilterName(name) {
+
+    let htmlContentToAppend = "";
+    for (let i = 0; i < currentProductsArray.length; i++) {
+        let producto = currentProductsArray[i];
+
+        if (producto.name.toLowerCase().includes(name.toLowerCase())) {
+
+            htmlContentToAppend += `
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-3">
+                    <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">` + producto.name + `</h4>
+                        <small class="text-muted">` + producto.soldCount + ` vendidos </small>
+                    </div>
+                    <div>` + "Precio: " + producto.currency + " " + producto.cost + `</div>
+                    <p class="mb-1">` + producto.description + `</p>
+                </div>
+            </div>
+        </div>
+        `
+        }
+    }
+    if (htmlContentToAppend == "") {
+        htmlContentToAppend = "No hay ningún elemento nombrado:" + "  " + name;
+    }
+    document.getElementsByClassName("container p-5")[0].innerHTML = htmlContentToAppend;
 }
 
 
@@ -101,6 +134,7 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     //Muestro los productos ordenadas
     showProductsList();
 }
+
 document.addEventListener("DOMContentLoaded", function(e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
@@ -157,5 +191,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
         }
 
         showProductsList();
+    });
+
+    document.getElementById("searching").addEventListener("keyup", function() {
+        var name = document.getElementById("searching").value;
+        if (name != "") {
+            showProductsListFilterName(name);
+        } else {
+            showProductsList();
+        }
     });
 });

@@ -1,0 +1,5 @@
+excalmación:   	<i class="fa fa-exclamation-triangle"></i> 
+usuario:	<i class="fa fa-user-tie"></i>
+email: 		<i class="fa fa-at"></i>
+password:	<i class="fa fa-lock"></i>
+ocultar pass: 	<i class="fa fa-eye-slash"></i>
