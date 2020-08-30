@@ -24,6 +24,7 @@ var usuario2 = document.getElementById("inputUsuario");
 var usuario = document.getElementById("inputUsuario");
 var correo = document.getElementById("inputEmail");
 var contra = document.getElementById("inputPassword");
+var contra2 = document.getElementById("inputPassword2");
 var errorUsuario = document.getElementById("demo");
 var errorCorreo = document.getElementById("demo1");
 var errorContraseña = document.getElementById("demo2");
@@ -40,11 +41,11 @@ function validarForm() {
     mensajeError["Correo"] = correo.value === null || correo.value === "";
     mensajeError["Contraseña"] = contra.value === null || contra.value === "";
     mensajeError["CantCaract"] = contra.value.length <= 6;
+    mensajeError["ContraseñasIguales"] = contra.value !== contra2.value;
 
     if (mensajeError["Usuario"]) {
         errorUsuario.innerHTML = "Ingresa un nombre de usuario";
         usuario.style.borderColor = "red";
-        usuario.style.backgroundColor = "rgb(255, 190, 190)";
     } else {
         usuario.style.borderColor = "green";
     }
@@ -52,7 +53,6 @@ function validarForm() {
     if (mensajeError["Correo"]) {
         errorCorreo.innerHTML = "Ingresa la dirección del correo";
         correo.style.borderColor = "red";
-        correo.style.backgroundColor = "rgb(255, 190, 190)";
     } else {
         correo.style.borderColor = "green";
     }
@@ -60,19 +60,20 @@ function validarForm() {
     if (mensajeError["Contraseña"]) {
         errorContraseña.innerHTML = "Ingresa la contraseña";
         contra.style.borderColor = "red";
-        contra.style.backgroundColor = "rgb(255, 190, 190)";
     } else {
         if (mensajeError["CantCaract"]) {
             errorContraseña.innerHTML = "La contraseña debe tener mas de 6 caracteres";
             contra.style.borderColor = "red";
-            contra.style.backgroundColor = "rgb(255, 190, 190)";
         } else {
             contra.style.borderColor = "green";
         }
     }
+    if (mensajeError["ContraseñasIguales"]) {
+        errorContraseña.innerHTML = "Las contraseñas no coinciden";
+    }
 
 
-    return !mensajeError["Usuario"] && !mensajeError["Correo"] && !mensajeError["Contraseña"] && !mensajeError["CantCaract"];
+    return !mensajeError["Usuario"] && !mensajeError["Correo"] && !mensajeError["Contraseña"] && !mensajeError["CantCaract"] && !mensajeError["ContraseñasIguales"];
 
 };
 
@@ -82,10 +83,12 @@ function mostrarUsuario() {
 
     var usuario2 = document.getElementById("inputUsuario").value;
     miStorage.setItem("keyUsuario", usuario2);
-
-
-
-    //document.getElementById("user1").innerHTML = miStorage.getItem("keyUsuario")
-    //document.getElementById("user").innerHTML = miStorange.getItem("keyUsuario")
-    //alert(miStorage.getItem("keyUsuario"));
 };
+
+if (p1 != p2) {
+    alert("Las passwords deben de coincidir");
+    return false;
+} else {
+    alert("Todo esta correcto");
+    return true;
+}
