@@ -25,10 +25,10 @@
             display: -ms-flexbox;
             display: flex;
             -ms-flex-align: center;
-            align-items: center;
+            align-items: center no-repeat;
             padding-top: 40px;
             padding-bottom: 40px;
-            backdrop-filter: blur(20px) grayscale(40%);
+            backdrop-filter: blur(20px) grayscale(60%);
         }
         
         .signin {
@@ -53,7 +53,6 @@
                     </div>
                     <label for="inputUsuario" class="sr-only">Usuario</label>
                     <input type="text" name="Usuario" id="inputUsuario" class="form-control my-form-control" placeholder="-Nombre de usuario-">
-
                 </div>
 
                 <div id="demo1"></div>
@@ -74,6 +73,15 @@
                     <input type="password" id="inputPassword" class="form-control my-form-control" placeholder="-Contraseña-">
                     <span class="input-group-text"><img src="img/eye-slash-solid.svg" class="fa fa-eye" id="bot"></i> </span>
                 </div>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-lock my-fa-fa-user"></i></span>
+                    </div>
+                    <label for="inputPassword" class="sr-only" id="pass2">Contraseña </label>
+                    <input type="password" id="inputPassword2" class="form-control my-form-control" placeholder="-Confirme la contraseña-">
+                    <span class="input-group-text"><img src="img/eye-slash-solid.svg" class="fa fa-eye" id="bot"></i> </span>
+                </div>
+
 
                 <div class="checkbox mb-3">
                     <label>
